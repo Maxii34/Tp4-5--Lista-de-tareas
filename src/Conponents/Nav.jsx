@@ -8,7 +8,7 @@ function NavForm() {
     <Navbar expand="lg" className="shadow ">
       <Container>
         <Navbar.Brand href="#home" className="text-light">
-          Tp8-Formulario
+          Tp-Formulario [4/5]
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
