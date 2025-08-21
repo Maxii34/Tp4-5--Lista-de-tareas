@@ -1,12 +1,10 @@
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ListaTarea from "./Listatarea";
-import { useState } from "react";
 
 const Formulario = () => {
-  const [tareas, setTareas] = useState([]);
-
   const {
     register,
     handleSubmit,
@@ -14,12 +12,19 @@ const Formulario = () => {
     formState: { errors },
   } = useForm();
 
+  const tareasLocalstorage =
+    JSON.parse(localStorage.getItem("tareaskey")) || [];
+  const [tareas, setTareas] = useState(tareasLocalstorage);
+
+  useEffect(() => localStorage.setItem("tareaskey", JSON.stringify(tareas)),
+    [tareas]
+  );
+
   const agregarTarea = (data) => {
-    setTareas([...tareas, data.tarea]); // agrega nueva tarea
-    reset({ tarea: "" }); // limpia input
+    const nuevas = [...tareas, data.tarea]; // crea el nuevo array con la tarea
+    setTareas(nuevas); // actualiza el estado
+    reset({ tarea: "" }); // limpia el input 
   };
-
-
 
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
