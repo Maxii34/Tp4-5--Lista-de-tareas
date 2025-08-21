@@ -10,3 +10,10 @@
 main {
     flex-grow: 1;
 }
+
+nav {
+  background-color: #1D293D;
+}
+.shad{
+   box-shadow: 0 0 0 0.5px rgba(223, 216, 216, 0.301);
+}
