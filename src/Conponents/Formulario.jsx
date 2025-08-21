@@ -26,10 +26,15 @@ const Formulario = () => {
     reset({ tarea: "" }); // limpia el input 
   };
 
+
+const borrarTarea = (nombreTarea)=>{
+  const tareasFiltradas = tareas.filter((ItemTarea)=> ItemTarea !== nombreTarea ) 
+  setTareas(tareasFiltradas)
+}
+
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
-      <Row>
-        <Col md={6} lg={12} className="border rounded p-4 shadow w-100">
+        <div  className="border rounded p-4 shadow w-auto">  
           <h2 className="text-center mb-3">Bienvenido</h2>
           <p className="text-center">Ingresa tus tareas</p>
 
@@ -38,7 +43,7 @@ const Formulario = () => {
               Swal.fire("Error", "Completa todos los datos.", "error");
             })}
           >
-            <Form.Group className="mb-3 d-flex gap-2">
+            <Form.Group className="mb-3 d-flex gap-2 ">
               <Form.Control
                 type="text"
                 placeholder="Ingresa una tarea"
@@ -62,9 +67,8 @@ const Formulario = () => {
               {errors.tarea?.message}
             </Form.Text>
           </Form>
-          <ListaTarea tareas={tareas} />
-        </Col>
-      </Row>
+          <ListaTarea tareas={tareas} borrarTarea={borrarTarea} />
+        </div>
     </Container>
   );
 };
