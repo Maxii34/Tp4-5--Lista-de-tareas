@@ -21,9 +21,9 @@ const Formulario = () => {
   );
 
   const agregarTarea = (data) => {
-    const nuevas = [...tareas, data.tarea]; // crea el nuevo array con la tarea
-    setTareas(nuevas); // actualiza el estado
-    reset({ tarea: "" }); // limpia el input 
+    const nuevas = [...tareas, data.tarea]; 
+    setTareas(nuevas); 
+    reset({ tarea: "" }); 
   };
 
 
