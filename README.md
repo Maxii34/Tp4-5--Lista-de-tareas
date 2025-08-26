@@ -19,7 +19,7 @@ Las tareas se guardan en **LocalStorage**, por lo que permanecen disponibles inc
 ---
 
 ## 📸 Vista previa
-![Demo de la lista de tareas]()  
+[Demo de la lista de tareas]()  
   
 
 ## 👨‍💻 Autor
